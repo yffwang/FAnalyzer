@@ -24,16 +24,18 @@ class FAnalyzer:
         print("[Step3]获取到得分数量:", len(self.origin_df['得分']))
 
         # 加载现有的 Excel 文件
-        wb = load_workbook(self.filename)
-        ws = wb['Sheet1']
-        # 获取最后一列的列号
-        last_col_letter = ws.cell(row=1, column=ws.max_column).column_letter
-        # 将 '结果' 列写回到 Excel 文件的最后一列，并保留下拉列表
-        for index, value in enumerate(self.origin_df['得分'], start=2):
-            ws[f'{last_col_letter}{index}'].value = value
-        wb.save(self.filename)
+        # wb = load_workbook(self.filename)
+        # ws = wb['Sheet1']
+        # # 获取最后一列的列号
+        # last_col_letter = ws.cell(row=1, column=ws.max_column).column_letter
+        # # 将 '结果' 列写回到 Excel 文件的最后一列，并保留下拉列表
+        # for index, value in enumerate(self.origin_df['得分'], start=2):
+        #     ws[f'{last_col_letter}{index}'].value = value
+        # wb.save(self.filename)
 
-        print("[Step4]处理完成，并将结果写回")
+        print_df = self.origin_df[['代码', '名称', '得分']]
+        print("[Step4]处理完成，处理结果为：")
+        print(print_df)
 
     def process_row(self, row):
         total = 0

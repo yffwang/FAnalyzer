@@ -22,7 +22,6 @@ class Worker(QThread):
         self.analyzer = analyzer
 
     def run(self):
-        print("[Version 1.0.0]")
         self.analyzer.analyze()
 
 
@@ -39,7 +38,7 @@ class MyApp(QWidget):
 
     def init_ui(self):
         self.setFont(QFont("Arial", 12))
-        self.setWindowTitle('FAnalyzer')
+        self.setWindowTitle('FAnalyzer [version 1.0.3]')
         self.setGeometry(100, 100, 600, 400)
 
         self.layout = QVBoxLayout()
