@@ -1,7 +1,7 @@
 import sys
+from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit
 from PyQt5.QtCore import QThread, pyqtSignal, QObject
-import time
 
 from fanalyzer import FAnalyzer
 
@@ -38,6 +38,7 @@ class MyApp(QWidget):
         self.analyzer = FAnalyzer('stocks.xlsx')
 
     def init_ui(self):
+        self.setFont(QFont("Arial", 12))
         self.setWindowTitle('FAnalyzer')
         self.setGeometry(100, 100, 600, 400)
 
